@@ -1,0 +1,21 @@
+:nnoremap <Space>w :update<CR>
+:nnoremap <Space>q :bd<CR>
+
+:nnoremap <Space>o o<Esc>0"_D
+:nnoremap <Space>O O<Esc>0"_D
+
+:vnoremap <Space>( c()<Esc>P
+:vnoremap <Space>[ c[]<Esc>P
+:vnoremap <Space>{ c{}<Esc>P
+:vnoremap <Space>" c""<Esc>P
+:vnoremap <Space>' c''<Esc>P
+
+:unm H
+:nnoremap H :bp<CR>
+:unm L
+:nnoremap L :bn<CR>
+
+:set ai
+:set hls
+:set incsearch
+:set nu 
