@@ -1,0 +1,14 @@
+#!/bin/bash
+
+DOTDIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+while read p; do
+    if [[ x$p == x"-"* ]]; then
+        FROM=$DOTDIR"/"$(echo $p | cut -d " " -f2) 
+        TO=$(echo $p | cut -d " " -f5) 
+        TO=${TO/\~/$HOME}
+        # echo "ln -sf $FROM $TO"
+        ln -sf $FROM $TO
+        echo "Linked $FROM to $TO"
+    fi
+done < $DOTDIR"/README.md"
