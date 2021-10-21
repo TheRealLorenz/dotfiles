@@ -1,0 +1,430 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;==========================================================
+
+[colors]
+background = #222
+background-alt = #444
+foreground = #e6e6e6
+foreground-alt = #222
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+padding = 1
+font0 = "Roboto Condensed:style=regular:pixelsize=10;2"
+font1 = "Font Awesome 5 Free Solid:style=Solid:pixelsize=9;2"
+
+;==========================================================
+
+[bar/bar1]
+monitor = ${env:MONITOR:}
+width = 100%
+height = 22
+fixed-center = true
+bottom = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 2
+line-color = #f00
+
+border-top-size = 0
+border-right-size = 0
+border-left-size = 0
+border-color = #00000000
+
+padding-left = 2 
+padding-right = 2
+
+module-margin-left = 2
+module-margin-right = 2 
+
+font-0 = ${colors.font0}
+font-1 = ${colors.font1}
+
+modules-left = i3 xwindow 
+modules-center = playstatus playerctl
+modules-right = trash filesystem pulseaudio memory temp cpu vpn eth date
+
+tray-position = right
+tray-padding = 1 
+tray-background = ${colors.background}
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+;separator = ︁
+separator-padding = 2
+
+enable-ipc = true
+
+;==========================================================
+
+[bar/bar2]
+monitor = ${env:MONITOR:}
+width = 100%
+height = 20
+fixed-center = true
+bottom = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 1
+line-color = #f00
+
+border-top-size = 0
+border-right-size = 0
+border-left-size = 0
+border-color = #00000000
+
+padding-left = 2
+padding-right = 2
+
+;module-margin-left = 1
+;module-margin-right = 1
+ 
+font-0 = ${colors.font0}
+font-1 = ${colors.font1}
+
+modules-left = i3 xwindow 
+modules-center = 
+modules-right = date
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+separator = ︁ 
+separator-padding = 2
+
+;==========================================================
+
+[module/xwindow]
+type = internal/xwindow
+
+format = <label>
+format-prefix = "  "
+format-prefix-foreground = #cbbaed
+format-underline = #cbbaed
+
+;label = "  |  %title:0:30:...%  |"
+label = "  %title:0:30:...%  "
+label-foreground = ${colors.foreground}
+
+
+;==========================================================
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix = ""
+format-prefix-foreground = ${colors.foreground-alt}
+;format-prefix-underline = ${colors.secondary}
+format-prefix-background = #e60053
+
+label-layout = "%layout%"
+;label-layout-underline = ${colors.secondary}
+label-layout-background = #e60053
+
+label-indicator-padding = 0
+label-indicator-margin = 0
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+format-prefix-padding = 0
+format-layout-padding = 0
+format-indicator-padding = 0
+
+;==========================================================
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+format-mounted-prefix = " "
+format-mounted-prefix-foreground = #fc9e4f
+format-mounted-underline = #fc9e4f
+
+label-mounted = %percentage_used%%
+label-mounted-foreground = ${colors.foreground}
+label-unmounted = %mountpoint% not mounted
+
+;==========================================================
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+
+format-prefix = " "
+format-prefix-foreground = #23ce6b
+format-underline = #23ce6b
+
+label = %percentage:2%%
+label-foreground = ${colors.foreground}
+
+;==========================================================
+
+[module/memory]
+type = internal/memory
+interval = 2
+
+format-prefix = " "
+format-prefix-foreground = #34435e
+format-underline = #34435e
+
+label = %percentage_used%%
+label-foreground = ${colors.foreground}
+
+;==========================================================
+
+[module/wlan]
+type = internal/network
+interface = wlp59s0
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-underline = #9f78e1
+label-connected = %essid%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+;ramp-signal-0 = 
+;ramp-signal-1 = 
+;ramp-signal-2 = 
+;ramp-signal-3 = 
+;ramp-signal-4 = 
+ramp-signal-foreground = ${colors.foreground-alt}
+
+;==========================================================
+
+[module/eth]
+type = internal/network
+interface = enp34s0
+interval = 3.0
+
+format-connected-prefix = " "
+format-connected-prefix-foreground = #fc9e4f
+format-connected-underline = #fc9e4f
+
+label-connected = %local_ip%
+label-connected-foreground = ${colors.foreground}
+
+;==========================================================
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = ""
+date-alt = "%{F#a72608}%{F-} %d-%m-%Y "
+
+time = "%{F#a72608}%{F-} %H:%M"
+time-alt = %H:%M:%S
+
+format-prefix = ""
+format-prefix-foreground = #FFFFFF
+format-underline = #a72608
+
+label = %date%%time%
+label-foreground = ${colors.foreground}
+
+;==========================================================
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume> <bar-volume>
+format-muted-prefix = " "
+format-muted-prefix-foreground = ${colors.alert}
+format-volume-prefix = " "
+format-volume-prefix-foreground = #a72608
+format-volume-underline = #a72608
+
+label-volume = "%percentage%%"
+label-volume-foreground = ${colors.foreground}
+label-muted = "muted"
+label-muted-foreground = ${colors.foreground}
+
+bar-volume-width = 10
+bar-volume-format = %fill%%empty%
+
+bar-volume-foreground-0 = ${colors.secondary}
+bar-volume-foreground-1 = ${colors.secondary}
+bar-volume-foreground-2 = ${colors.primary}
+bar-volume-foreground-3 = ${colors.primary}
+bar-volume-foreground-4 = #40ad4b
+bar-volume-foreground-5 = #40ad4b
+
+bar-volume-gradient = false
+
+bar-volume-indicator = 
+bar-volume-indicator-font = 2
+bar-volume-indicatr-foreground = ${colors.foreground}
+
+bar-volume-fill = 
+bar-volume-fill-font = 2
+
+bar-volume-empty = 
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground}
+
+click-right = exec pavucontrol
+
+;==========================================================
+
+[module/alsa]
+type = internal/alsa
+
+format-volume = <label-volume> <bar-volume>
+label-volume = VOL
+label-volume-foreground = ${root.foreground}
+
+format-muted-prefix = ""
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = sound muted
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+;==========================================================
+
+[module/trash]
+type = custom/script
+format = <label>
+label = %output%
+label-foreground = ${colors.foreground}
+format-prefix = " "
+format-prefix-foreground = #23ce6b
+format-underline = #23ce6b
+exec = trash-list | wc -l
+click-right = trash-empty
+click-left = alacritty -e ~/.config/polybar/scripts/trash-show.sh 
+interval = 5
+
+;========================================================== ----***********----
+
+[module/temp]
+type = custom/script
+format = <label>
+format-prefix = " "
+format-prefix-foreground = #cbbaed
+format-underline = #cbbaed
+label = %output%
+label-foreground = ${colors.foreground} 
+exec = ~/.config/polybar/scripts/get_temp.sh
+click-left = alacritty -e bpytop
+
+;==========================================================
+
+[module/playerctl]
+type = custom/script
+format = <label>
+format-underline = #3cc962
+label = %output%
+exec = "playerctl metadata -f '{{ title }} by {{ artist }}' -F 2>/dev/null"
+tail = true
+
+;=========================================================
+
+[module/playstatus]
+type= custom/script
+format = <label>
+label = %output%
+label-foreground = #3cc962
+exec = ~/.config/polybar/scripts/check_play.sh
+interval = 1
+
+;=========================================================
+
+[module/vpn]
+type = custom/script
+format = <label>
+format-underline = #3cc962
+label = %output%
+exec-if = pgrep -x openvpn
+exec = "echo '%{F#3cc962}%{F-}  VPN'"
+
+;=========================================================
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+pin-workspaces = true
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= #fc9e4f
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-background = ${colors.background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+; Separator in between workspaces
+; label-separator = |
+
+;==========================================================
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+;==========================================================
+
+[global/wm]
+;margin-top = 5
+;margin-bottom = 5
