@@ -149,4 +149,5 @@ exec --no-startup-id flameshot
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 exec pactl set-default-sink 47
 exec --no-startup-id redshift
+exec udiskie --tray
 exec_always --no-startup-id "i3altlayout"
