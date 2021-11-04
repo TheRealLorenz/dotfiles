@@ -51,6 +51,7 @@ alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 alias wget='wget -c'
+alias ssh="TERM=xterm-256color ssh"
 
 # Export PATH environmental variable
 export PATH="$PATH:/home/lollo/.local/bin"
