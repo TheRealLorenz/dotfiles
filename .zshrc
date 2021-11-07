@@ -66,6 +66,8 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev
 # # neofetch --ascii_bold off --ascii_colors 45 38 --bold on --colors 45 7 45 38 7 7
 # neofetch
 
+spaceship_vi_mode_disable
+
 #lf to switch dir
 lfcd() {
         tmp="$(mktemp)"

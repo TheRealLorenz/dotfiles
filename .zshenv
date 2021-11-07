@@ -1,6 +1,6 @@
 export PATH
 
-export EDITOR="code"
+export EDITOR="lvim"
 export TERMINAL="konsole"
 
 export LF_ICONS="\
