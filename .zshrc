@@ -10,6 +10,7 @@ autoload -U compinit; compinit
 # Styling
 zstyle ':completion:*' menu select
 prompt spaceship
+spaceship_vi_mode_disable
 
 # History cache
 HISTSIZE=10000
@@ -52,6 +53,7 @@ alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 alias wget='wget -c'
 alias ssh="TERM=xterm-256color ssh"
+alias ranger=". ranger"
 
 # Export PATH environmental variable
 export PATH="$PATH:/home/lollo/.local/bin"
@@ -66,17 +68,3 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev
 # # neofetch --ascii_bold off --ascii_colors 45 38 --bold on --colors 45 7 45 38 7 7
 # neofetch
 
-spaceship_vi_mode_disable
-
-#lf to switch dir
-lfcd() {
-        tmp="$(mktemp)"
-        lfrun -last-dir-path="$tmp" "$@"
-        if [ -f "$tmp" ]; then
-                dir="$(cat "$tmp")"
-                rm -f "$tmp"
-                [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
-        fi
-}
-bindkey -s '^o' 'lfcd
-'
