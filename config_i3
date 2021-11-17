@@ -5,6 +5,9 @@ for_window [class=".*"] border pixel 5
 for_window [class="albert"] border pixel 0
 # smart_borders on
 
+# class             border  backgr. text    indicator   child_border
+client.focused      #fcba03 #0c0c0c #000000 #23ce6b     #23ce6b
+
 # Workspaces
 set $monitor1 HDMI-A-0 
 set $monitor2 DisplayPort-1 
