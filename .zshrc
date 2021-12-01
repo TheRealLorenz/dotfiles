@@ -54,6 +54,8 @@ alias chgrp='chgrp --preserve-root'
 alias wget='wget -c'
 alias ssh="TERM=xterm-256color ssh"
 alias ranger=". ranger"
+alias bar="watch progress -w"
+alias virsh="virsh --connect qemu:///system"
 
 # Export PATH environmental variable
 export PATH="$PATH:/home/lollo/.local/bin"
