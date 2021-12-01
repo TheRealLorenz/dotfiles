@@ -52,7 +52,7 @@ module-margin-right = 2
 font-0 = ${colors.font0}
 font-1 = ${colors.font1}
 
-modules-left = i3 xwindow 
+modules-left = i3 info-hlwm-workspaces xwindow 
 modules-center = playstatus playerctl
 modules-right = trash filesystem pulseaudio memory temp cpu vpn eth date
 
@@ -97,7 +97,7 @@ module-margin-right = 2
 font-0 = ${colors.font0}
 font-1 = ${colors.font1}
 
-modules-left = i3 xwindow 
+modules-left = i3 info-hlwm-workspaces xwindow 
 modules-center = 
 modules-right = date
 
@@ -412,6 +412,15 @@ label-urgent-padding = 2
 
 ; Separator in between workspaces
 ; label-separator = |
+
+;==========================================================
+
+[module/info-hlwm-workspaces]
+type = custom/script
+exec = ~/.config/polybar/scripts/info-hlwm-workspaces.sh
+tail = true
+scroll-up = herbstclient use_index -1 --skip-visible &
+scroll-down = herbstclient use_index +1 --skip-visible &
 
 ;==========================================================
 
