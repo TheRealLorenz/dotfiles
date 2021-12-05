@@ -229,7 +229,7 @@ cursor:
     #   - ▇ Block
     #   - _ Underline
     #   - | Beam
-    shape: Beam
+    shape: Block
 
     #   - Never: Prevent the cursor from ever blinking
     #   - Off: Disable blinking by default
