@@ -72,8 +72,8 @@ bindsym $mod+r mode "resize"
 bindsym $mod+g gaps inner current toggle 15 
 bindsym $mod+Shift+g mode "gaps" 
 # bindsym $mod+l exec i3lock -i ~/Pictures/totoro_blurred.png -e
-# bindsym $mod+d exec ~/.config/rofi/scripts/rofi_wrap.sh 
-bindsym $mod+space exec ~/.local/scripts/toggle_intl_layout.sh
+bindsym $mod+Shift+d exec rofi -show drun -modi drun -show-icons
+bindsym $mod+space exec layout-switcher
 # -----------------------
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -144,7 +144,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Launch startup app
-exec_always .config/polybar/scripts/launch.sh
+exec_always ~/.config/polybar/launch.sh --blocks
 exec --no-startup-id picom --experimental-backend
 exec ~/.fehbg
 exec --no-startup-id slack -u
@@ -155,3 +155,4 @@ exec --no-startup-id redshift
 exec udiskie --tray
 exec_always --no-startup-id "i3altlayout"
 exec albert
+exec pasystray

@@ -22,11 +22,16 @@ hc keybind $Mod-Shift-e spawn rofi -show exit -modi "exit:~/.config/rofi/exit.sh
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-q close
 hc keybind $Mod-Return spawn alacritty
-hc keybind $Mod-d spawn rofi -show drun -modi drun -show-icons
+# hc keybind $Mod-d spawn rofi -show drun -modi drun -show-icons
 hc keybind $Mod-Tab spawn rofi -show window -modi window --show-icons
 hc keybind $Mod-Shift-t spawn rofi -show xrdb -modi "xrdb:~/.config/rofi/xrdb_selector.sh"
 hc keybind $Mod-p spawn rofi -show memo -modi "memo:~/.config/rofi/memo.sh"
 hc keybind $Mod-space spawn layout-switcher
+
+# Media controls
+hc keybind XF86AudioNext spawn playerctl next
+hc keybind XF86AudioPrev spawn playerctl prev
+hc keybind XF86AudioPlay spawn playerctl play-pause
 
 # basic movement in tiling and floating mode
 # focusing clients
@@ -189,9 +194,6 @@ hc unlock
 # hc set_monitors 1280x1024+0+0 1280x1024+1280+0
 # or simply:
 hc detect_monitors
-
-# Set Keyboard layout
-setxkbmap us &
 
 # Start compositor
 killall picom

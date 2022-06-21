@@ -4,18 +4,22 @@ set shellopts '-eu' # set safet shell commands
 set ifs "\n"        # set internal field separator
 set scrolloff 10    # space at the top and the bottom
 set drawbox true    # enable border draw
-# set promptfmt "%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+
+set previewer stpv
+set cleaner stpvimgclr
+&stpvimg --listen $id
+cmd on-quit $stpvimg --end $id
 
 map <enter> shell   # press enter for shell commands
-map x $$f           # execute current file (must be executable)
 map X !$f
 map o &mimeopen $f  # dedicated keys for file opener actions
 map O $mimeopen --ask $f
 map <delete> trash
-map r push :rename<space>
+map I :rename; cmd-home
 map i set hidden!
 map zz push :zip<space>
 map x
+map xx $$f           # execute current file (must be executable)
 map xt extract
 map ta push :tar<space>
 map c
@@ -31,6 +35,7 @@ map fi file
 map u
 map us unselect
 map un unzip
+map A rename
 # map l
 # map ln push :link<space>
 
@@ -45,8 +50,6 @@ cmd open ${{
 
 cmd link %ln -sf $1 $fx
 
-cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
-
 cmd chmod %chmod $1 $fx
 
 cmd mkdir %mkdir $1
@@ -56,8 +59,6 @@ cmd mkfile %touch $1
 cmd setbg %feh --bg-fill $fx  
 
 cmd codefolder %code .
-
-# cmd file %file $fx
 
 cmd file ${{
     set -f
@@ -74,7 +75,7 @@ cmd delete ${{
     [ $ans = "y" ] && rm -rf $fx
 }}
 
-cmd trash %trash-put $fx
+cmd trash %trash $fx
 
 cmd unzip ${{
     set -f
@@ -104,10 +105,3 @@ cmd zip ${{
     rm -rf $1
 }}
 
-# set image previewer official
-#set previewer ~/.config/lf/previewer.sh
-#set cleaner ~/.config/lf/clear_img.sh
-
-# set previewer git
-set previewer ~/.config/lf/preview
-set cleaner ~/.config/lf/cleaner

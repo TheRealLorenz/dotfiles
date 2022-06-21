@@ -1,7 +1,7 @@
 export PATH
 
-export EDITOR="lvim"
-export TERMINAL="konsole"
+export EDITOR="nvim"
+export TERMINAL="alacritty"
 
 export LF_ICONS="\
 tw=:\
