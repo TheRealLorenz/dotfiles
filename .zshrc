@@ -73,13 +73,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # Auto suggestion
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 
-
-#
-# You may also like to assign a key to this command:
-#
-#     bind '"\C-o":"lfcd\C-m"'  # bash
-#     bindkey -s '^o' 'lfcd\n'  # zsh
-
 # echo -e "\n"
 # # neofetch --ascii_bold off --ascii_colors 45 38 --bold on --colors 45 7 45 38 7 7
 # neofetch
