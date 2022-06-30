@@ -318,7 +318,7 @@ workspace 1
 
 # Application executed on launch
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec mako &
+exec salut &
 exec albert &
 exec gammastep -l 43.9:11.1 -m wayland &
 exec udiskie --tray &
