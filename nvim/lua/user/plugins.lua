@@ -80,6 +80,14 @@ return require('packer').startup({function(use)
   -- MD preview
   use {"ellisonleao/glow.nvim", branch = 'main'}
 
+  -- Git integration
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
+
 end,
 config = {
   display = {
