@@ -303,7 +303,7 @@ for_window [shell=".*"] title_format "%title :: %shell"
 #
 # Input configuration
 #
-input * {
+input type:keyboard {
     xkb_layout "us,us"
     xkb_variant ",intl"
     xkb_options "grp:shifts_toggle"
