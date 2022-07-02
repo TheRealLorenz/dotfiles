@@ -105,6 +105,13 @@ return require('packer').startup({function(use)
     end
   }
 
+  use {
+    'mizlan/iswap.nvim',
+    config = function()
+      require('iswap').setup()
+    end
+  }
+
 end,
 config = {
   display = {

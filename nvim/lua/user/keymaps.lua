@@ -20,6 +20,11 @@ wk.register({
   e = { ":NvimTreeToggle<CR>", "Toggle NvimTree" },
   ["/"] = { ":CommentToggle<CR>", "Comment Line" },
   h = { ":nohls<CR>", "Disable Highlight Search" },
+  i = {
+    name = "ISwap",
+    s = { ":ISwap<CR>", "ISwap" },
+    w = { ":ISwapWith<CR>", "ISwapWith" },
+  },
 }, { prefix = "<leader>" })
 
 wk.register({
