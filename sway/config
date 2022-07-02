@@ -309,6 +309,11 @@ input type:keyboard {
     xkb_options "grp:shifts_toggle"
 }
 
+input type:tablet_tool {
+    map_to_output "Samsung Electric Company T24D391 0x00000000"
+    left_handed enabled
+}
+
 # 
 # Export variables for wayland
 #
