@@ -88,6 +88,23 @@ return require('packer').startup({function(use)
     end
   }
 
+  -- Pretty pop-ups
+  use {
+    'stevearc/dressing.nvim',
+    config = function()
+      require('dressing').setup()
+    end
+  }
+
+  -- Telescope
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} },
+    config = function()
+      require('telescope').setup()
+    end
+  }
+
 end,
 config = {
   display = {
