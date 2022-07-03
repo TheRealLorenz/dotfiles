@@ -1,6 +1,6 @@
 local lspconfig = require('lspconfig')
 
-local settings = require('lua.user.lsp.settings')
+local settings = require('user.lsp.settings')
 
 local servers = { 'clangd', 'pyright', 'sumneko_lua' }
 
@@ -10,7 +10,7 @@ for _, server_name in ipairs(servers) do
     on_attach = settings.on_attach,
   }
 
-  local custom_module_name = string.format('lua.user.lsp.servers.%s', server_name)
+  local custom_module_name = string.format('user.lsp.servers.%s', server_name)
   local has_module, custom_opts = pcall(require, custom_module_name)
 
   if has_module then
