@@ -30,4 +30,5 @@ wk.register({
 wk.register({
   e = { ":NvimTreeToggle<CR>", "Toggle NvimTree" },
   ["/"] = { ":'<,'>CommentToggle<CR>", "Comment Selected Lines"},
+  v = { ":VBox<CR>", "Draw Venn Diagramm" }
 }, { prefix = "<leader>", mode = "v" })
