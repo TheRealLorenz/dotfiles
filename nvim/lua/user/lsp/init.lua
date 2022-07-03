@@ -1,12 +1,13 @@
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-
 local lspconfig = require('lspconfig')
 
+local settings = require('lua.user.lsp.settings')
+
 local servers = { 'clangd', 'pyright', 'sumneko_lua' }
+
 for _, server_name in ipairs(servers) do
   local opts = {
-    capabilities = capabilities
+    capabilities = settings.capabilities,
+    on_attach = settings.on_attach,
   }
 
   local custom_module_name = string.format('lua.user.lsp.servers.%s', server_name)
