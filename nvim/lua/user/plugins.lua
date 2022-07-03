@@ -21,7 +21,7 @@ return require('packer').startup({function(use)
   -- Status bar
   use {
     'nvim-lualine/lualine.nvim',
-    config = function() require('lualine').setup() end
+    config = function() require('lualine').setup {} end
   }
 
   -- Keymappings
