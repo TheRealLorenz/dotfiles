@@ -17,7 +17,7 @@ local options = {
   showmode = false,
   termguicolors = true,
   timeoutlen = 500,
-  listchars = { eol = '↵', space = '·', tab = '>-', nbsp = '␣' },
+  listchars = { eol = '↵', trail = '·', tab = '>-', nbsp = '␣' },
 }
 
 for k, v in pairs(options) do
