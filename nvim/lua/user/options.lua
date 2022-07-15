@@ -17,6 +17,7 @@ local options = {
   showmode = false,
   termguicolors = true,
   timeoutlen = 500,
+  colorcolumn = '80',
   listchars = { eol = '↵', trail = '·', tab = '>-', nbsp = '␣' },
 }
 
