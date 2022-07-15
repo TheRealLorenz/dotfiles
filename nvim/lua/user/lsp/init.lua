@@ -2,7 +2,7 @@ local lspconfig = require('lspconfig')
 
 local settings = require('user.lsp.settings')
 
-local servers = { 'clangd', 'pyright', 'sumneko_lua', 'tsserver' }
+local servers = { 'clangd', 'pyright', 'sumneko_lua', 'tsserver', 'cssls' }
 
 for _, server_name in ipairs(servers) do
   local opts = {
