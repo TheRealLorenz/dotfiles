@@ -10,6 +10,7 @@ M.on_attach = function(client, bufnr)
       r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
       a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
       f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format Code" },
+      d = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Open Floating Diagnostic"},
       g = {
         name = "Goto",
         d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
