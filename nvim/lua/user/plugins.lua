@@ -81,7 +81,10 @@ return require('packer').startup({function(use)
   use {"ellisonleao/glow.nvim", branch = 'main'}
 
   -- MD cooler preview
-  use {'iamcco/markdown-preview.nvim'}
+  use({
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
+  })
 
   -- Git integration
   use {
@@ -104,7 +107,7 @@ return require('packer').startup({function(use)
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} },
     config = function()
-      require('telescope').setup()
+      require('telescope').setup{}
     end
   }
 
