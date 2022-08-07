@@ -59,13 +59,23 @@ return require('packer').startup({function(use)
   -- LSP
   use 'neovim/nvim-lspconfig'
 
-  -- Completion
+  -- Completion ---------------------------------------------------------------
+  -- Base
   use 'hrsh7th/nvim-cmp'
+
+  -- LSP
   use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-nvim-lsp-signature-help'
+
+  -- Path
+  use 'hrsh7th/cmp-path'
+
+  -- Buffer
+  use 'hrsh7th/cmp-buffer'
+
+  -- Snippets
   use 'saadparwaiz1/cmp_luasnip'
+  -----------------------------------------------------------------------------
 
   -- Snippets
   use 'rafamadriz/friendly-snippets'
@@ -76,9 +86,6 @@ return require('packer').startup({function(use)
 
   -- Venn diagram
   use "jbyuki/venn.nvim"
-
-  -- MD preview
-  use {"ellisonleao/glow.nvim", branch = 'main'}
 
   -- MD cooler preview
   use({
