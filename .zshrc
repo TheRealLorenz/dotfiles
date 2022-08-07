@@ -50,7 +50,6 @@ alias cd..='cd ..'
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
-alias rm='rm -I --preserve-root'
 alias mv='mv -i'
 alias cp='cp -i'
 alias ln='ln -i'
@@ -62,7 +61,7 @@ alias ssh="TERM=xterm-256color ssh"
 alias bar="watch progress -w"
 alias virsh="virsh --connect qemu:///system"
 alias ide="tmux split-window -v -p 30"
-alias rm="echo 'vuoi sfondare tutto di nuovo?'"
+alias rm="printf 'vuoi sfondare tutto di nuovo?\n'"
 
 # Export PATH environmental variable
 export PATH="$PATH:/home/lollo/.local/bin"
