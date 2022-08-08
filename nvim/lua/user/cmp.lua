@@ -22,7 +22,7 @@ cmp.setup {
       else
         cmp.mapping.confirm {
           behavior = cmp.ConfirmBehavior.Replace,
-          select = true,
+          select = false,
         }
       end
     end,
