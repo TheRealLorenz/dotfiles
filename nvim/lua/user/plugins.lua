@@ -101,6 +101,9 @@ return require('packer').startup({function(use)
     end
   }
 
+  -- Lazygit
+  use "kdheepak/lazygit.nvim"
+
   -- Pretty pop-ups
   use {
     'stevearc/dressing.nvim',

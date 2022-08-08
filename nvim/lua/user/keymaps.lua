@@ -25,6 +25,7 @@ wk.register({
     s = { ":ISwap<CR>", "ISwap" },
     w = { ":ISwapWith<CR>", "ISwapWith" },
   },
+  g = { ":LazyGit<CR>", "Open LazyGit" },
 }, { prefix = "<leader>" })
 
 wk.register({
