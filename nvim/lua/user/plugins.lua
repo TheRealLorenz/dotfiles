@@ -15,6 +15,9 @@ return require('packer').startup({function(use)
   -- Word cursor
   use 'yamatsum/nvim-cursorline'
 
+  -- Multi cursor
+  use 'mg979/vim-visual-multi'
+
   -- Buffer bar
   use 'romgrk/barbar.nvim'
 
