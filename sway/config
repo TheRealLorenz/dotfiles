@@ -309,7 +309,7 @@ for_window [shell=".*"] title_format "%title :: %shell"
 input type:keyboard {
     xkb_layout "us,us"
     xkb_variant ",intl"
-    xkb_options "grp:ctrl_space_toggle"
+    xkb_options "grp:shifts_toggle"
 }
 
 input type:tablet_tool {
