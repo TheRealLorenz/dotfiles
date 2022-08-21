@@ -326,7 +326,6 @@ workspace 1
 
 # Application executed on launch
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec salut &
 exec albert &
 exec gammastep -l 43.9:11.1 -m wayland &
 exec udiskie --tray &
@@ -336,5 +335,5 @@ exec solaar --window=hide &
 exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
 exec rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov
 exec_always --no-startup-id autotiling
-exec waybar
+exec waybar &
 exec xrandr --output $(xrandr | grep 1920x1080 | cut -d " " -f1) --primary
