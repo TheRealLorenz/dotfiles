@@ -263,6 +263,9 @@ gaps inner 15
 #
 # Border
 # 
+default_border pixel 5
+client.focused #5E81AC #5E81AC #ffffff
+client.urgent  #BF616A #BF616A #ffffff
 
 
 #
