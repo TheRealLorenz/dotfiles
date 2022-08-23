@@ -110,9 +110,7 @@ return require('packer').startup({function(use)
   -- Pretty pop-ups
   use {
     'stevearc/dressing.nvim',
-    config = function()
-      require('dressing').setup()
-    end
+    config = function() require('user.dressing') end
   }
 
   -- Telescope
