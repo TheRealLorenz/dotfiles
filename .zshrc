@@ -1,16 +1,12 @@
-# Created by newuser for 5.8
 #
-
 # Load modules
-autoload -Uz vcs_info
 autoload -U colors && colors
-autoload -U promptinit; promptinit
-autoload -U compinit; compinit
+autoload -U promptinit && promptinit
+autoload -U compinit && compinit
 
 # Styling
 zstyle ':completion:*' menu select
-prompt spaceship
-spaceship_vi_mode_disable
+prompt bonzo
 
 # History cache
 HISTSIZE=10000
@@ -76,3 +72,4 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev
 # # neofetch --ascii_bold off --ascii_colors 45 38 --bold on --colors 45 7 45 38 7 7
 # neofetch
 
+source ~/zsh-prompt-benchmark/zsh-prompt-benchmark.plugin.zsh
