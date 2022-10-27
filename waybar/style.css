@@ -6,49 +6,46 @@
   font-weight: bold;
 }
 
-
 /* Bar config */
 window#waybar {
-    background-color: #2E3440;
-    color: #ECEFF4;
-    transition-property: background-color;
-    transition-duration: .5s;
+  background-color: #2e3440;
+  color: #eceff4;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
-
 
 /* Colorscheme config */
 .modules-right > *:nth-child(5n + 1) {
-  color: #BF616A;
+  color: #bf616a;
 }
 
 .modules-right > *:nth-child(5n + 2) {
-  color: #D08770;
+  color: #d08770;
 }
 
 .modules-right > *:nth-child(5n + 3) {
-  color: #A3BE8C;
+  color: #a3be8c;
 }
 
 .modules-right > *:nth-child(5n + 4) {
-  color: #8FBCBB;
+  color: #8fbcbb;
 }
 
 .modules-right > *:nth-child(5n) {
-  color: #B48EAD;
+  color: #b48ead;
 }
 
 #tray {
-  background-color: #4C566A;
+  background-color: #4c566a;
   border-radius: 10px 0 0 0;
 }
 
-
 /* Modules config */
 #workspaces button {
-    padding: 0 5px;
-    color: #ffffff;
-    border: none;
-    border-radius: 10px 10px 0 0;
+  padding: 0 5px;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px 10px 0 0;
 }
 
 #workspaces button:nth-child(1) {
@@ -57,11 +54,11 @@ window#waybar {
 
 #workspaces button.focused,
 #workspaces button.focused:hover {
-    background-color: #4C566A;
+  background-color: #4c566a;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+  background-color: #eb4d4b;
 }
 
 /* Remove default hover behaviour */
@@ -88,11 +85,11 @@ window#waybar {
 #language,
 #window,
 #mpd {
-    padding: 0 15px;
+  padding: 0 10px;
 }
 
 #window {
-  background-color: #4C566A;
+  background-color: #4c566a;
   border-radius: 10px 10px 0 0;
 }
 
@@ -102,40 +99,40 @@ window#waybar.empty #window {
 }
 
 #network.disconnected {
-    /* background-color: #f53c3c; */
+  /* background-color: #f53c3c; */
 }
 
 #pulseaudio.muted {
-    /* background-color: #90b1b1; */
-    /* color: #2a5c45; */
+  /* background-color: #90b1b1; */
+  /* color: #2a5c45; */
 }
 
 #temperature.critical {
-    /* background-color: #eb4d4b; */
+  /* background-color: #eb4d4b; */
 }
 
 #tray > .passive {
-    /* -gtk-icon-effect: dim; */
+  /* -gtk-icon-effect: dim; */
 }
 
 #tray > .needs-attention {
-    /* -gtk-icon-effect: highlight; */
-    /* background-color: #eb4d4b; */
+  /* -gtk-icon-effect: highlight; */
+  /* background-color: #eb4d4b; */
 }
 
 #idle_inhibitor {
-    /* background-color: #2d3436; */
+  /* background-color: #2d3436; */
 }
 
 #idle_inhibitor.activated {
-    /* background-color: #ecf0f1; */
-    /* color: #2d3436; */
+  /* background-color: #ecf0f1; */
+  /* color: #2d3436; */
 }
 
 #keyboard-state > label {
-    /* padding: 0 5px; */
+  /* padding: 0 5px; */
 }
 
 #keyboard-state > label.locked {
-    /* background: rgba(0, 0, 0, 0.2); */
+  /* background: rgba(0, 0, 0, 0.2); */
 }
