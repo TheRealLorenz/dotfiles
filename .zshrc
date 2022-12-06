@@ -14,6 +14,7 @@ prompt bonzo
 # History cache
 HISTSIZE=10000
 SAVEHIST=10000
+[ ! -d ~/.cache/zsh ] && mkdir -p ~/.cache/zsh
 HISTFILE=~/.cache/zsh/history
 setopt share_history
 
@@ -71,7 +72,7 @@ alias ide="tmux split-window -v -p 30"
 alias rm="printf 'vuoi sfondare tutto di nuovo?\n'"
 
 # Export PATH environmental variable
-export PATH="$PATH:/home/lollo/.local/bin"
+export PATH="$PATH:/home/$USER/.local/bin"
 
 # Set syntax highlighting
 [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
