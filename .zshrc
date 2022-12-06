@@ -1,4 +1,7 @@
 #
+# Theming
+export fpath=("$fpath[@]" "$HOME/.zthemes" )
+
 # Load modules
 autoload -U colors && colors
 autoload -U promptinit && promptinit
@@ -33,8 +36,16 @@ bindkey '^H' backward-kill-word
 bindkey -s '^o' 'lfcd\n'
 
 # Aliases
-alias cat=bat
-alias ls=exa
+if [[ ! $(which bat) == 'bat not found' ]]; then
+    alias cat=bat
+fi
+
+if [[ ! $(which exa) == 'exa not found' ]]; then
+    alias ls=exa
+else
+    alias ls='ls --color=auto'
+fi
+
 alias ll='ls -l'
 #alias lf=lfrun
 alias mkdir='mkdir -pv'
@@ -63,13 +74,16 @@ alias rm="printf 'vuoi sfondare tutto di nuovo?\n'"
 export PATH="$PATH:/home/lollo/.local/bin"
 
 # Set syntax highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null 
+[[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null 
 
 # Auto suggestion
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+[[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && \
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 
 # echo -e "\n"
 # # neofetch --ascii_bold off --ascii_colors 45 38 --bold on --colors 45 7 45 38 7 7
 # neofetch
 
-source ~/zsh-prompt-benchmark/zsh-prompt-benchmark.plugin.zsh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
