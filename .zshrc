@@ -70,6 +70,7 @@ alias bar="watch progress -w"
 alias virsh="virsh --connect qemu:///system"
 alias ide="tmux split-window -v -p 30"
 alias rm="printf 'vuoi sfondare tutto di nuovo?\n'"
+alias cdtemp="cd $(mktemp -d)"
 
 # Export PATH environmental variable
 export PATH="$PATH:/home/$USER/.local/bin"
