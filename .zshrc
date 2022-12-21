@@ -87,5 +87,10 @@ export PATH="$PATH:/home/$USER/.local/bin"
 # # neofetch --ascii_bold off --ascii_colors 45 38 --bold on --colors 45 7 45 38 7 7
 # neofetch
 
+source ~/zsh-prompt-benchmark/zsh-prompt-benchmark.plugin.zsh
+
+# nvm stuff
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
