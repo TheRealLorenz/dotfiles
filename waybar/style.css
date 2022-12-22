@@ -15,23 +15,23 @@ window#waybar {
 }
 
 /* Colorscheme config */
-.modules-right > *:nth-child(5n + 1) {
+.modules-right > *:nth-child(5n + 1) > * {
   color: #bf616a;
 }
 
-.modules-right > *:nth-child(5n + 2) {
+.modules-right > *:nth-child(5n + 2) > * {
   color: #d08770;
 }
 
-.modules-right > *:nth-child(5n + 3) {
+.modules-right > *:nth-child(5n + 3) > * {
   color: #a3be8c;
 }
 
-.modules-right > *:nth-child(5n + 4) {
+.modules-right > *:nth-child(5n + 4) > * {
   color: #8fbcbb;
 }
 
-.modules-right > *:nth-child(5n) {
+.modules-right > *:nth-child(5n) > * {
   color: #b48ead;
 }
 
