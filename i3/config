@@ -64,11 +64,12 @@ mode "gaps" {
 
 # Keybindings
 set $mod Mod4
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+r mode "resize"
+bindsym $mod+d exec rofi -show drun -show-icons
 bindsym $mod+g gaps inner current toggle 15 
 bindsym $mod+Shift+g mode "gaps" 
 # bindsym $mod+l exec i3lock -i ~/Pictures/totoro_blurred.png -e
@@ -147,12 +148,9 @@ bindsym XF86AudioPrev exec playerctl previous
 exec_always ~/.config/polybar/launch.sh --blocks
 exec --no-startup-id picom --experimental-backend
 exec ~/.fehbg
-exec --no-startup-id slack -u
 exec --no-startup-id flameshot
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 exec pactl set-default-sink 47
 exec --no-startup-id redshift
 exec udiskie --tray
-exec_always --no-startup-id "i3altlayout"
-exec albert
 exec pasystray
