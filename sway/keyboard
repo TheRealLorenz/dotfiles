@@ -1,0 +1,9 @@
+input "type:keyboard" {
+  xkb_layout us,us
+  xkb_variant ,intl
+  repeat_delay 300
+  repeat_rate 40
+  xkb_capslock disabled
+  xkb_numlock disabled
+  xkb_options grp:shifts_toggle
+}
