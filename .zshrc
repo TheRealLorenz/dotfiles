@@ -1,7 +1,3 @@
-#
-# Theming
-export fpath=("$fpath[@]" "$HOME/.zthemes" )
-
 # Load modules
 autoload -U colors && colors
 autoload -U promptinit && promptinit
@@ -9,7 +5,6 @@ autoload -U compinit && compinit
 
 # Styling
 zstyle ':completion:*' menu select
-prompt bonzo
 
 # History cache
 HISTSIZE=10000
