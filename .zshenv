@@ -1,7 +1,6 @@
 export PATH
 
 export EDITOR="nvim"
-export TERMINAL="alacritty"
 
 export LF_ICONS="\
 tw=:\
