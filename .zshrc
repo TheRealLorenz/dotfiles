@@ -5,6 +5,7 @@ autoload -U compinit && compinit
 
 # Styling
 zstyle ':completion:*' menu select
+prompt spaceship
 
 # History cache
 HISTSIZE=10000
