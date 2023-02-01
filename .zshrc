@@ -24,6 +24,9 @@ if [ -f "$LFCD" ]; then
     source "$LFCD"
 fi
 
+# Emacs mode (default)
+bindkey -e
+
 # Keybindings
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
