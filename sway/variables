@@ -1,6 +1,6 @@
-set $term kitty
+set $term foot
 set $browser google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland
 set $filemanager nemo
-set $editor kitty -e nvim
+set $editor foot -e nvim
 set $launcher nwg-drawer
 set $exit nwg-bar -p center -a middle -i 48 -s preset-0.css
