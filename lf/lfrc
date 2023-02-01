@@ -5,11 +5,6 @@ set ifs "\n"        # set internal field separator
 set scrolloff 10    # space at the top and the bottom
 set drawbox true    # enable border draw
 
-set previewer stpv
-set cleaner stpvimgclr
-&stpvimg --listen $id
-cmd on-quit $stpvimg --end $id
-
 map <enter> shell   # press enter for shell commands
 map X !$f
 map o &mimeopen $f  # dedicated keys for file opener actions
