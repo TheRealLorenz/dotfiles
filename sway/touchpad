@@ -1,5 +1,4 @@
 input "type:touchpad" {
-  accel_profile flat
   pointer_accel 0.0
   natural_scroll disabled
   scroll_factor 1.0

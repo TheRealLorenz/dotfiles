@@ -13,6 +13,13 @@ input type:tablet_tool {
     # left_handed enabled
 }
 
+## Games related stuff
+#
+# Disable dualshock touchpad
+input "1356:2508:Sony_Interactive_Entertainment_Wireless_Controller_Touchpad" events disabled
+# Inhibit idling
+for_window [class="milesmorales.exe"] inhibit_idle
+
 # nwg-shell sway config
 # Read `man 5 sway` for reference.
 
