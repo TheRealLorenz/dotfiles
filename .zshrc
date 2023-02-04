@@ -35,16 +35,13 @@ bindkey '^[[3;5~' kill-word
 bindkey '^H' backward-kill-word
 bindkey -s '^o' 'lfcd\n'
 
-# Aliases
-if [[ ! $(which bat) == 'bat not found' ]]; then
-    alias cat=bat
-fi
+function optional_alias() {
+    which $2 &>/dev/null && alias $1=$2
+}
 
-if [[ ! $(which exa) == 'exa not found' ]]; then
-    alias ls=exa
-else
-    alias ls='ls --color=auto'
-fi
+# Aliases
+optional_alias cat bat
+optional_alias ls exa
 
 alias ll='ls -l'
 #alias lf=lfrun
