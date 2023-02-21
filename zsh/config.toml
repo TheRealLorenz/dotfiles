@@ -1,0 +1,5 @@
+base_path = "~/.config/zsh"
+
+[rc.zsh]
+base_path = "$HOME/"
+custom_name = ".zshrc"
