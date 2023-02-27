@@ -32,7 +32,7 @@ alias s="source ~/.zshrc"
 alias gcm="git commit"
 alias gcma="git commit --amend"
 alias glo="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias glop="glo | fzf | cut -d '*' -f2- | cut -d ' ' -f2 | wl-copy"
+alias glop="git log --oneline --color=always | fzf --ansi --preview 'git show {+1} --color=always' | cut -d ' ' -f1 | wl-copy"
 alias gst="git status"
 
 function gcmf() {
