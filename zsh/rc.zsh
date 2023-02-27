@@ -5,7 +5,7 @@ autoload -U compinit && compinit
 
 # Styling
 zstyle ':completion:*' menu select
-prompt spaceship
+eval "$(starship init zsh)"
 
 # History cache
 HISTSIZE=10000
