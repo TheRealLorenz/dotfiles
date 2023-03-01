@@ -25,7 +25,7 @@ alias bar="watch progress -w"
 alias rm="printf 'vuoi sfondare tutto di nuovo?\n'"
 alias cdtemp="cd $(mktemp -d)"
 
-function cdf() { cd $(ls -d */ | fzf) }
+alias cdx='cd "$(xplr --print-pwd-as-result)"'
 
 alias s="source ~/.zshrc"
 
