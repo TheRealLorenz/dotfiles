@@ -266,6 +266,7 @@ bindsym Mod1+KP_Subtract         gaps outer current minus 5
 for_window [app_id="(?i)(?:blueman-manager|azote|gnome-disks)"] floating enable
 for_window [app_id="(?i)(?:pavucontrol|nm-connection-editor|gsimplecal|galculator)"] floating enable
 for_window [app_id="(?i)(?:firefox|chromium)"] border none
+for_window [title="Albert"] border none
 for_window [title="(?i)(?:copying|deleting|moving)"] floating enable
 
 popup_during_fullscreen smart
