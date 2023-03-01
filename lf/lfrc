@@ -1,0 +1,4 @@
+# vim:ft=conf
+
+set drawbox on
+set icons
