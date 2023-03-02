@@ -1,4 +1,12 @@
 # vim:ft=conf
 
+# Options
 set drawbox on
 set icons
+
+# Custom commands
+cmd trash %trash-put $fx
+cmd delete trash
+
+# Key bindings
+map <delete> delete
