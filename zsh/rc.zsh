@@ -5,7 +5,14 @@ autoload -U compinit && compinit
 
 # Styling
 zstyle ':completion:*' menu select
-eval "$(starship init zsh)"
+
+# Load starship if present
+which starship &>/dev/null \
+    && eval "$(starship init zsh)" \
+    || echo -e "\
+Starship not installed.\n\
+Install it via the following link: \
+https://starship.rs/guide/#%F0%9F%9A%80-installation"
 
 # History cache
 HISTSIZE=10000
