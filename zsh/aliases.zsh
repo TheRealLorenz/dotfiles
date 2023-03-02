@@ -29,12 +29,9 @@ alias cdx='cd "$(xplr --print-pwd-as-result)"'
 
 alias s="source ~/.zshrc"
 
+# Git commit
 alias gcm="git commit"
 alias gcma="git commit --amend"
-alias glo="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias glop="git log --oneline --color=always | fzf --ansi --preview 'git show {+1} --color=always' | cut -d ' ' -f1 | wl-copy"
-alias gst="git status"
-
 function gcmf() {
     SUMMARY=$(gum input --placeholder "Summary of this change")
     DESCRIPTION=$(gum write --placeholder "Details of this change (CTRL+D to finish)")
@@ -43,3 +40,14 @@ function gcmf() {
         && git commit -m "$SUMMARY" -m "$DESCRIPTION" \
         || echo "Aborted"
 }
+
+# Git log
+alias glo="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias glop="git log --oneline --color=always | fzf --ansi --preview 'git show {+1} --color=always' | cut -d ' ' -f1 | wl-copy"
+
+# Git status
+alias gst="git status"
+
+# Git branch
+alias gbd="git branch | gum choose --no-limit | xargs git branch -d"
+
