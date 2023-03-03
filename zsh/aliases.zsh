@@ -49,5 +49,5 @@ alias glop="git log --oneline --color=always | fzf --ansi --preview 'git show {+
 alias gst="git status"
 
 # Git branch
-alias gbd="git branch | gum choose --no-limit | xargs git branch -d"
-
+alias gbd="git branch | grep -v "^\*" | gum choose --no-limit | xargs git branch -d"
+alias gbc="git branch | gum choose | xargs git checkout"
