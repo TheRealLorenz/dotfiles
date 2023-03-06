@@ -7,6 +7,8 @@ set icons
 # Custom commands
 cmd trash %trash-put $fx
 cmd delete trash
+cmd append $[[ $1 == *"/" ]] && mkdir -p $1 || touch $1 
 
 # Key bindings
 map <delete> delete
+map a push :append<space>
