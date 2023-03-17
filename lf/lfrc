@@ -9,7 +9,7 @@ set shellopts '-eu'
 # Custom commands
 cmd trash %trash-put $fx
 cmd delete trash
-cmd append $[[ $1 == *"/" ]] && mkdir -p $1 || touch $1 
+cmd append $IFS=' '; [[ $* == *"/" ]] && mkdir -p "$*" || touch "$*"
 
 cmd extract ${{
     set -f
