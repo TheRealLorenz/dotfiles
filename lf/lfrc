@@ -3,7 +3,8 @@
 # Options
 set drawbox on
 set icons
-set shell '/bin/bash'
+set shell bash
+set shellopts '-eu'
 
 # Custom commands
 cmd trash %trash-put $fx
