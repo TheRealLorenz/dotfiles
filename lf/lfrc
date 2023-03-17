@@ -7,7 +7,7 @@ set shell bash
 set shellopts '-eu'
 
 # Custom commands
-cmd trash %trash-put $fx
+cmd trash %trash-put "$fx"
 cmd delete trash
 cmd append $IFS=' '; [[ $* == *"/" ]] && mkdir -p "$*" || touch "$*"
 
