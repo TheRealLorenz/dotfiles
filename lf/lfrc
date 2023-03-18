@@ -42,3 +42,9 @@ cmd zip ${{
 # Key bindings
 map <delete> delete
 map a push :append<space>
+map xt extract
+
+map c
+map cl clear
+map ct push :tar<space>
+map cz push :zip<space>
