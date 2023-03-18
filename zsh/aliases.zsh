@@ -2,6 +2,18 @@ function optional_alias() {
     which $2 &>/dev/null && alias $1=$2
 }
 
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  if [[ "XDG_SESSION_TYPE" == "wayland" ]]; then
+    alias copy="wl-copy"
+  else
+    alias copy="xclip -i"
+  fi
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  alias copy="pb-copy"
+else
+  echo "Couldn't setup 'copy' alias. Architecture '$OSTYPE' not supported"
+fi
+
 optional_alias cat bat
 optional_alias ls exa
 
@@ -43,7 +55,7 @@ function gcmf() {
 
 # Git log
 alias glo="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias glop="git log --oneline --color=always | fzf --ansi --preview 'git show {+1} --color=always' | cut -d ' ' -f1 | wl-copy"
+alias glop="git log --oneline --color=always | fzf --ansi --preview 'git show {+1} --color=always' | cut -d ' ' -f1 | copy"
 
 # Git status
 alias gst="git status"
