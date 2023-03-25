@@ -2,6 +2,7 @@
 
 source "~/dotfiles/nushell/completions.nu"
 source "~/dotfiles/nushell/themes.nu"
+source "~/dotfiles/nushell/lf.nu"
 
 # External completer example
 # let carapace_completer = {|spans|
