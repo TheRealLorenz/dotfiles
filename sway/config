@@ -6,6 +6,9 @@ include inputs
 
 # Read `man 5 sway` for reference.
 
+# wallpaper
+output * bg ~/.wallpaper fit
+
 # border & title
 for_window [title="^.*"] border pixel 1, title_format "<b> %class >> %title </b>"
 default_border pixel 1
