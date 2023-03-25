@@ -357,6 +357,13 @@ let-env config = {
       mode: [emacs, vi_normal, vi_insert]
       event: { send: menu name: commands_with_description }
     }
+    {
+      name: lfcd
+      modifier: control
+      keycode: char_o
+      mode: [emacs, vi_normal]
+      event: [ { edit: insertstring value: "lfcd" } { send: Enter } ]
+    }
   ]
 }
 
