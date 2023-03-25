@@ -1,26 +1,9 @@
-# The files we include below will be created / overwritten by nwg-shell tools
-#
 include variables
 include outputs
 include autostart
 include workspaces
-include keyboard
-include pointer
-include touchpad
+include inputs
 
-input type:tablet_tool {
-    map_to_output "Unknown MSI MP273 PB4H012601011"
-    # left_handed enabled
-}
-
-## Games related stuff
-#
-# Disable dualshock touchpad
-input "1356:2508:Sony_Interactive_Entertainment_Wireless_Controller_Touchpad" events disabled
-# Inhibit idling
-for_window [class="milesmorales.exe"] inhibit_idle
-
-# nwg-shell sway config
 # Read `man 5 sway` for reference.
 
 # border & title
@@ -52,7 +35,6 @@ exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec hash dbus-update-activation-environment 2>/dev/null && \
     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec ~/.azotebg
 
 ### Turn off screen on lid closed
 set $laptop eDP-1
@@ -68,22 +50,8 @@ bindsym Mod1+F4 kill
 
 # core applications
 bindsym $Mod+Return       exec $term
-bindsym Mod1+Shift+Return exec $term
-bindsym $Mod+t            exec $term
-bindsym $Mod+F2           exec $term
-bindsym $Mod+s            exec nwg-shell-config
 bindsym $Mod+d            exec $launcher
 bindsym $Mod+e            exec $filemanager
-bindsym $Mod+w            exec $browser
-bindsym Control+space     exec $launcher
-bindsym Mod1+F1           exec $launcher
-# bindsym $Mod+f            exec $filemanager
-bindsym $Mod+c            exec swaync-client -t
-bindsym Mod1+l            exec nwg-lock
-bindsym $Mod+F1           exec nwg-shell-help
-
-# Exit menu
-bindsym $Mod+x exec $exit
 
 # Exit sway (default way to log you out of your Wayland session)
 bindsym $Mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'

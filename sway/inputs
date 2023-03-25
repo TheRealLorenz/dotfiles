@@ -1,0 +1,20 @@
+input type:pointer {
+  natural_scroll disabled
+  scroll_factor 1.0
+  left_handed disabled
+}
+
+input type:tablet_tool {
+    map_to_output "Unknown MSI MP273 PB4H012601011"
+    # left_handed enabled
+}
+
+input "type:keyboard" {
+  xkb_layout us,us
+  xkb_variant ,intl
+  repeat_delay 300
+  repeat_rate 40
+  xkb_capslock disabled
+  xkb_numlock disabled
+  xkb_options grp:shifts_toggle
+}

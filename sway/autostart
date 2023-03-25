@@ -1,9 +1,4 @@
-exec rm /tmp/nwg-shell-check-update.lock
 exec wlsunset -l 48.8822 -L 2.3213 -t 4500 -T 6500 -g 1.0
-exec swaync -s /home/lollo/.config/swaync/preset-0.css
 exec nm-applet --indicator
 exec albert &
-exec_always nwg-autotiling
-exec_always nwg-drawer -r -c 6 -is 64 -fscol 2 -s preset-0.css -term foot
-exec_always nwg-panel -c preset-0 -s preset-0.css
-exec_always nwg-shell-check-updates
+exec waybar &

@@ -3,4 +3,3 @@ set $browser google-chrome-stable --enable-features=UseOzonePlatform --ozone-pla
 set $filemanager nemo
 set $editor foot -e nvim
 set $launcher albert toggle
-set $exit nwg-bar -p center -a middle -i 48 -s preset-0.css
