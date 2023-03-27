@@ -1,9 +1,9 @@
 # Nushell Config File
 
-source "~/dotfiles/nushell/completions.nu"
-source "~/dotfiles/nushell/themes.nu"
-source "~/dotfiles/nushell/alias.nu"
+source "~/.config/nushell/completions.nu"
+source "~/.config/nushell/themes.nu"
 use lf.nu
+source "~/.config/nushell/alias.nu"
 
 # External completer example
 # let carapace_completer = {|spans|
