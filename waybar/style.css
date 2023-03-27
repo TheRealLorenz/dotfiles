@@ -6,55 +6,30 @@
   font-weight: bold;
 }
 
+/* Color palette */
+@define-color dark #000000;
+@define-color light #F9F6EE;
+
 /* Bar config */
 window#waybar {
-  background-color: #2e3440;
-  color: #eceff4;
+  background-color: @dark;
+  color: @light;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
 
-/* Colorscheme config */
-.modules-right > *:nth-child(5n + 1) > * {
-  color: #bf616a;
-}
-
-.modules-right > *:nth-child(5n + 2) > * {
-  color: #d08770;
-}
-
-.modules-right > *:nth-child(5n + 3) > * {
-  color: #a3be8c;
-}
-
-.modules-right > *:nth-child(5n + 4) > * {
-  color: #8fbcbb;
-}
-
-.modules-right > *:nth-child(5n) > * {
-  color: #b48ead;
-}
-
-#tray {
-  background-color: #4c566a;
-  border-radius: 10px 0 0 0;
-}
-
 /* Modules config */
 #workspaces button {
-  padding: 0 5px;
-  color: #ffffff;
-  border: none;
-  border-radius: 10px 10px 0 0;
-}
-
-#workspaces button:nth-child(1) {
-  border-radius: 0 10px 0 0;
+  padding: 0;
+  color: @light;
+  border: 2px solid @dark;
+  border-radius: 0;
+  margin: 3px;
 }
 
 #workspaces button.focused,
 #workspaces button.focused:hover {
-  background-color: #4c566a;
+  border-color: @light;
 }
 
 #workspaces button.urgent {
@@ -67,6 +42,21 @@ window#waybar {
   text-shadow: inherit;
   background: inherit;
   border: inherit;
+}
+
+#window {
+  border: 2px solid @light;
+  padding: 0;
+  margin: 3px;
+}
+
+window#waybar.empty #window {
+  border: none;
+}
+
+#tray {
+  border: 2px solid @light;
+  margin: 3px;
 }
 
 #clock,
@@ -86,53 +76,4 @@ window#waybar {
 #window,
 #mpd {
   padding: 0 10px;
-}
-
-#window {
-  background-color: #4c566a;
-  border-radius: 10px 10px 0 0;
-}
-
-window#waybar.empty #window {
-  background-color: inherit;
-  border-radius: inherit;
-}
-
-#network.disconnected {
-  /* background-color: #f53c3c; */
-}
-
-#pulseaudio.muted {
-  /* background-color: #90b1b1; */
-  /* color: #2a5c45; */
-}
-
-#temperature.critical {
-  /* background-color: #eb4d4b; */
-}
-
-#tray > .passive {
-  /* -gtk-icon-effect: dim; */
-}
-
-#tray > .needs-attention {
-  /* -gtk-icon-effect: highlight; */
-  /* background-color: #eb4d4b; */
-}
-
-#idle_inhibitor {
-  /* background-color: #2d3436; */
-}
-
-#idle_inhibitor.activated {
-  /* background-color: #ecf0f1; */
-  /* color: #2d3436; */
-}
-
-#keyboard-state > label {
-  /* padding: 0 5px; */
-}
-
-#keyboard-state > label.locked {
-  /* background: rgba(0, 0, 0, 0.2); */
 }
