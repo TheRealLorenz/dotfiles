@@ -1,6 +1,6 @@
 # Nushell Lf File
 
-def "lf last-dir" [] {
+export def "last-dir" [] {
     let tmp = (mktemp)
     let pwd = (pwd)
 
