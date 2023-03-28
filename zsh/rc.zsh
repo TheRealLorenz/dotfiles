@@ -27,7 +27,6 @@ _comp_options+=(globdots)
 
 source "$HOME/.config/zsh/keybindings.zsh"
 source "$HOME/.config/zsh/aliases.zsh"
-source "$HOME/.config/zsh/nvm.zsh"
 source "$HOME/.config/zsh/lf.zsh"
 
 # Export PATH environmental variable
