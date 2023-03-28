@@ -70,9 +70,13 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioStop exec playerctl stop
-bindsym XF86AudioMute exec pamixer -t
-bindsym XF86AudioRaiseVolume exec pamixer -i 2
-bindsym XF86AudioLowerVolume exec pamixer -d 2
+
+bindsym XF86AudioMute exec ~/.config/sway/scripts/wob_volume_control.sh toggle_mute
+bindsym XF86AudioRaiseVolume exec ~/.config/sway/scripts/wob_volume_control.sh raise
+bindsym XF86AudioLowerVolume exec ~/.config/sway/scripts/wob_volume_control.sh lower
+bindsym Shift+XF86AudioMute exec ~/.config/sway/scripts/wob_volume_control.sh toggle_mute_source
+bindsym Shift+XF86AudioRaiseVolume exec ~/.config/sway/scripts/wob_volume_control.sh raise_source
+bindsym Shift+XF86AudioLowerVolume exec ~/.config/sway/scripts/wob_volume_control.sh lower_source
 
 # backlight
 bindsym XF86MonBrightnessUp exec light -A 5
