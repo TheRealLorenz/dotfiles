@@ -2,3 +2,5 @@ exec wlsunset -l 48.8822 -L 2.3213 -t 4500 -T 6500 -g 1.0
 exec nm-applet --indicator
 exec albert &
 exec waybar &
+exec mkfifo $XDG_RUNTIME_DIR/wob.sock
+exec tail -f $XDG_RUNTIME_DIR/wob.sock | wob &
