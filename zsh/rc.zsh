@@ -14,6 +14,9 @@ Starship not installed.\n\
 Install it via the following link: \
 https://starship.rs/guide/#%F0%9F%9A%80-installation"
 
+# Load homebrew if present (arm64)
+[[ -d "/opt/homebrew" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # History cache
 HISTSIZE=10000
 SAVEHIST=10000
