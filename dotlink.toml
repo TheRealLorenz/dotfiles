@@ -1,5 +1,5 @@
 base_dir = "~/.config"
-exclude = [ ".git/", "README.md", ".gitignore", "dotlink.toml" ]
+exclude = [ ".git", "README.md", ".gitignore", "dotlink.toml" ]
 
 [custom_dirs]
 ".tmux.conf" = "~/"
