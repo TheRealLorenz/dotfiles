@@ -9,7 +9,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     alias copy="xclip -i"
   fi
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-  alias copy="pb-copy"
+  alias copy="pbcopy"
 else
   echo "Couldn't setup 'copy' alias. Architecture '$OSTYPE' not supported"
 fi
