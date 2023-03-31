@@ -20,6 +20,9 @@ https://starship.rs/guide/#%F0%9F%9A%80-installation"
 # Load homebrew if present (arm64)
 [[ -d "/opt/homebrew" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# Init rust toolchain
+[[ -d "$HOME/.cargo" ]] && source "$HOME/.cargo/env"
+
 # History cache
 HISTSIZE=10000
 SAVEHIST=10000
