@@ -36,6 +36,7 @@ alias ssh="TERM=xterm-256color ssh"
 alias bar="watch progress -w"
 alias rm="printf 'vuoi sfondare tutto di nuovo?\n'"
 alias cdtemp="cd $(mktemp -d)"
+alias lg="lazygit"
 
 alias s="source ~/.zshrc"
 
