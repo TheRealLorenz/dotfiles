@@ -1,3 +1,6 @@
+# Export PATH environmental variable
+export PATH="$PATH:$HOME/.local/bin"
+
 # Load modules
 autoload -U colors && colors
 autoload -U promptinit && promptinit
@@ -31,9 +34,6 @@ _comp_options+=(globdots)
 source "$HOME/.config/zsh/keybindings.zsh"
 source "$HOME/.config/zsh/aliases.zsh"
 source "$HOME/.config/zsh/lf.zsh"
-
-# Export PATH environmental variable
-export PATH="$PATH:$HOME/.local/bin"
 
 # Set syntax highlighting
 [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
