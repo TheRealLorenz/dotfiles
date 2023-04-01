@@ -27,13 +27,11 @@ function source_if_exists() {
 source_if_exists "$HOME/.config/zsh/env.zsh"
 source_if_exists "$HOME/.config/zsh/starship.zsh"
 
-# Load homebrew if present (arm64)
-[[ -d "/opt/homebrew" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
-
 # Init rust toolchain
 [[ -d "$HOME/.cargo" ]] && source "$HOME/.cargo/env"
 
 
+source_if_exists "$HOME/.config/zsh/brew.zsh"
 source_if_exists "$HOME/.config/zsh/keybindings.zsh"
 source_if_exists "$HOME/.config/zsh/aliases.zsh"
 source_if_exists "$HOME/.config/zsh/lf.zsh"
