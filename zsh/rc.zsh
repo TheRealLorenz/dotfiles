@@ -32,6 +32,7 @@ source_if_exists "$HOME/.config/zsh/starship.zsh"
 
 
 source_if_exists "$HOME/.config/zsh/brew.zsh"
+source_if_exists "$HOME/.config/zsh/fnm.zsh"
 source_if_exists "$HOME/.config/zsh/keybindings.zsh"
 source_if_exists "$HOME/.config/zsh/aliases.zsh"
 source_if_exists "$HOME/.config/zsh/lf.zsh"
