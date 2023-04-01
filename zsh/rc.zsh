@@ -25,8 +25,8 @@ function source_if_exists() {
 }
 
 source_if_exists "$HOME/.config/zsh/env.zsh"
-source_if_exists "$HOME/.config/zsh/starship.zsh"
 source_if_exists "$HOME/.config/zsh/brew.zsh"
+source_if_exists "$HOME/.config/zsh/starship.zsh"
 source_if_exists "$HOME/.config/zsh/cargo.zsh"
 source_if_exists "$HOME/.config/zsh/fnm.zsh"
 source_if_exists "$HOME/.config/zsh/keybindings.zsh"
