@@ -1,6 +1,3 @@
-# Export PATH environmental variable
-export PATH="$PATH:$HOME/.local/bin"
-
 # Load modules
 autoload -U colors && colors
 autoload -U promptinit && promptinit
@@ -17,12 +14,6 @@ Starship not installed.\n\
 Install it via the following link: \
 https://starship.rs/guide/#%F0%9F%9A%80-installation"
 
-# Load homebrew if present (arm64)
-[[ -d "/opt/homebrew" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# Init rust toolchain
-[[ -d "$HOME/.cargo" ]] && source "$HOME/.cargo/env"
-
 # History cache
 HISTSIZE=10000
 SAVEHIST=10000
@@ -33,6 +24,21 @@ setopt share_history
 # Tab completion
 zmodload zsh/complist
 _comp_options+=(globdots)
+
+# Export PATH environmental variable
+export PATH="$PATH:$HOME/.local/bin"
+
+function source_if_exists() {
+  [[ -f $1 ]] && source $1
+}
+
+source_if_exists "$HOME/.config/zsh/env.zsh"
+# Load homebrew if present (arm64)
+[[ -d "/opt/homebrew" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Init rust toolchain
+[[ -d "$HOME/.cargo" ]] && source "$HOME/.cargo/env"
+
 
 source "$HOME/.config/zsh/keybindings.zsh"
 source "$HOME/.config/zsh/aliases.zsh"
