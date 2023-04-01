@@ -34,9 +34,9 @@ source_if_exists "$HOME/.config/zsh/starship.zsh"
 [[ -d "$HOME/.cargo" ]] && source "$HOME/.cargo/env"
 
 
-source "$HOME/.config/zsh/keybindings.zsh"
-source "$HOME/.config/zsh/aliases.zsh"
-source "$HOME/.config/zsh/lf.zsh"
+source_if_exists "$HOME/.config/zsh/keybindings.zsh"
+source_if_exists "$HOME/.config/zsh/aliases.zsh"
+source_if_exists "$HOME/.config/zsh/lf.zsh"
 
 # Set syntax highlighting
 [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
