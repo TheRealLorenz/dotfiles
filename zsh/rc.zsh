@@ -26,12 +26,8 @@ function source_if_exists() {
 
 source_if_exists "$HOME/.config/zsh/env.zsh"
 source_if_exists "$HOME/.config/zsh/starship.zsh"
-
-# Init rust toolchain
-[[ -d "$HOME/.cargo" ]] && source "$HOME/.cargo/env"
-
-
 source_if_exists "$HOME/.config/zsh/brew.zsh"
+source_if_exists "$HOME/.config/zsh/cargo.zsh"
 source_if_exists "$HOME/.config/zsh/fnm.zsh"
 source_if_exists "$HOME/.config/zsh/keybindings.zsh"
 source_if_exists "$HOME/.config/zsh/aliases.zsh"
