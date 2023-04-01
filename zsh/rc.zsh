@@ -6,14 +6,6 @@ autoload -U compinit && compinit
 # Styling
 zstyle ':completion:*' menu select
 
-# Load starship if present
-which starship &>/dev/null \
-    && eval "$(starship init zsh)" \
-    || echo -e "\
-Starship not installed.\n\
-Install it via the following link: \
-https://starship.rs/guide/#%F0%9F%9A%80-installation"
-
 # History cache
 HISTSIZE=10000
 SAVEHIST=10000
@@ -33,6 +25,8 @@ function source_if_exists() {
 }
 
 source_if_exists "$HOME/.config/zsh/env.zsh"
+source_if_exists "$HOME/.config/zsh/starship.zsh"
+
 # Load homebrew if present (arm64)
 [[ -d "/opt/homebrew" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
