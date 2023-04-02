@@ -3,4 +3,5 @@ exclude = [ ".git", "README.md", ".gitignore", "dotlink.toml" ]
 
 [custom_dirs]
 "tmux.conf" = "~/.tmux.conf"
+"rc.zsh" = "~/.zshrc"
 
