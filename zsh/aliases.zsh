@@ -2,6 +2,7 @@ function optional_alias() {
     which $2 &>/dev/null && alias $1=$2
 }
 
+# Setup 'copy' alias
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
     alias copy="wl-copy"
