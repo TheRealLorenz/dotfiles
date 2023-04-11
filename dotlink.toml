@@ -1,7 +1,8 @@
+[default]
 base_dir = "~/.config"
 exclude = [ ".git", "README.md", ".gitignore", "dotlink.toml" ]
 
-[custom_dirs]
+[default.custom_dirs]
 "tmux.conf" = "~/.tmux.conf"
 "rc.zsh" = "~/.zshrc"
 
