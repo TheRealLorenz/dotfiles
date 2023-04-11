@@ -29,9 +29,14 @@ alias ....='cd ../../../'
 alias mv='mv -i'
 alias cp='cp -i'
 alias ln='ln -i'
-alias chown='chown --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chgrp='chgrp --preserve-root'
+
+# --preserve-root option only available in linux
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  alias chown='chown --preserve-root'
+  alias chmod='chmod --preserve-root'
+  alias chgrp='chgrp --preserve-root'
+fi
+
 alias wget='wget -c'
 alias ssh="TERM=xterm-256color ssh"
 alias bar="watch progress -w"
