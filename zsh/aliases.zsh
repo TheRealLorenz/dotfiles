@@ -18,7 +18,7 @@ fi
 optional_alias cat bat
 optional_alias ls exa
 
-alias ll='ls -lah'
+alias ll='ls -lh'
 alias mkdir='mkdir -pv'
 alias pong='ping google.com'
 alias ~='cd ~'
