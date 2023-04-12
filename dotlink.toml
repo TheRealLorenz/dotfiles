@@ -5,4 +5,5 @@ exclude = [ ".git", "README.md", ".gitignore", "dotlink.toml" ]
 [default.custom_dirs]
 "tmux.conf" = "~/.tmux.conf"
 "rc.zsh" = "~/.zshrc"
+"rc.vrapper" = "~/.vrapperrc"
 
