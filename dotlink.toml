@@ -1,9 +1,12 @@
-[default]
-base_dir = "~/.config"
+[global]
+to = "~/.config"
 exclude = [ ".git", "README.md", ".gitignore", "dotlink.toml" ]
 
-[default.custom_dirs]
+[global.custom_links]
 "tmux.conf" = "~/.tmux.conf"
 "rc.zsh" = "~/.zshrc"
 "rc.vrapper" = "~/.vrapperrc"
+
+[presets.macOS]
+exclude = [ "herbstluftwm", "mako", "i3", "picom.conf", "polybar", "sov", "sway", "waybar" ]
 
