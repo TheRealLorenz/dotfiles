@@ -1,12 +1,12 @@
-[global]
-to = "~/.config"
-exclude = [ ".git", "README.md", ".gitignore", "dotlink.toml" ]
-
-[global.custom_links]
-"tmux.conf" = "~/.tmux.conf"
-"rc.zsh" = "~/.zshrc"
-"rc.vrapper" = "~/.vrapperrc"
+[presets.linux]
+to = '~/.config'
+links = []
 
 [presets.macOS]
-exclude = [ "herbstluftwm", "mako", "i3", "picom.conf", "polybar", "sov", "sway", "waybar" ]
-
+to = '~/.config'
+links = [
+  'lf',
+  'zsh',
+  { name = 'rc.zsh', to = '~/.zshrc' },
+  { name = 'tmux.conf', to = '~/.tmux.conf' },
+]
