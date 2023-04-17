@@ -1,12 +1,16 @@
-[presets.linux]
+[[linux]]
+names = []
 to = '~/.config'
-links = []
 
-[presets.macOS]
+[[macOS]]
+names = [ 'lf', 'zsh', 'starship.toml' ]
 to = '~/.config'
-links = [
-  'lf',
-  'zsh',
-  { name = 'rc.zsh', to = '~/.zshrc' },
-  { name = 'tmux.conf', to = '~/.tmux.conf' },
-]
+
+[[macOS]]
+name = 'rc.zsh'
+to = '~/.zshrc'
+
+[[macOS]]
+name = 'tmux.conf'
+to = '~/.tmux.conf'
+
