@@ -46,6 +46,8 @@ alias lg="lazygit"
 
 alias s="source ~/.zshrc"
 
+### Git
+
 # Git commit
 alias gcm="git commit"
 alias gcma="git commit --amend"
@@ -66,5 +68,15 @@ alias glop="git log --oneline --color=always | fzf --ansi --preview 'git show {+
 alias gst="git status"
 
 # Git branch
-alias gbd="git branch | grep -v "^\*" | gum choose --no-limit | xargs git branch -d"
-alias gbc="git branch | gum choose | xargs git checkout"
+function gbd() {
+  other_branches=$(git branch | grep -v "^\*")
+
+  [[ -z $other_branches ]] && echo "no branch to delete" && return 1;
+  echo $other_branches | gum choose --no-limit | xargs git branch -d
+}
+
+function gbc() {
+  other_branches=$(git branch | grep -v "^\*")
+  [[ -z $other_branches ]] && echo "no branch to checkout" && return 1;
+  echo $other_branches | gum choose | xargs git checkout
+}
