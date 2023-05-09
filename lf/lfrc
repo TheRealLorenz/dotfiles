@@ -1,7 +1,7 @@
 # vim:ft=conf
 
 # Options
-set drawbox on
+set drawbox
 set icons
 set shell bash
 set shellopts '-eu'
