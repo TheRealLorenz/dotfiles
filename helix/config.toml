@@ -1,0 +1,6 @@
+[editor]
+bufferline = 'multiple'
+
+[editor.indent-guides]
+render = true
+character = '▏'
