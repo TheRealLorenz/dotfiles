@@ -10,3 +10,7 @@ select = "underline"
 [editor.indent-guides]
 render = true
 character = '▏'
+
+[keys.normal.g]
+l = ["collapse_selection", "extend_to_line_end"]
+h = ["collapse_selection", "extend_to_line_start"]
