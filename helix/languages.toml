@@ -52,3 +52,6 @@ codeActionOnSave = { mode = "all" }
 experimental = { }
 problems = { shortenToSingleLine = false }
 workingDirectory = { mode = "auto" }
+
+[language-server.rust-analyzer.config]
+check = { command = "clippy" }
