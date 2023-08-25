@@ -2,6 +2,7 @@
 
 [[language]]
 name = "html"
+language-servers = ["vscode-html-language-server", "emmet-language-server"]
 formatter = { command = 'prettier', args = ["--parser", "html"] }
 
 [[language]]
@@ -26,13 +27,13 @@ auto-format = true
 
 [[language]]
 name = "tsx"
-language-servers = ["typescript-language-server", "eslint"]
+language-servers = ["typescript-language-server", "eslint", "emmet-language-server"]
 formatter = { command = 'prettier', args = ["--parser", "typescript"] }
 auto-format = true
 
 [[language]]
 name = "svelte"
-language-servers = ["eslint", "svelteserver"]
+language-servers = ["eslint", "svelteserver", "emmet-language-server"]
 formatter = { command = 'prettier' }
 auto-format = true
 
@@ -58,6 +59,10 @@ codeActionOnSave = { mode = "all" }
 experimental = { }
 problems = { shortenToSingleLine = false }
 workingDirectory = { mode = "auto" }
+
+[language-server.emmet-language-server]
+command = "emmet-language-server"
+args = ["--stdio"]
 
 [language-server.rust-analyzer.config]
 check = { command = "clippy" }
