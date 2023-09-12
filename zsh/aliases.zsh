@@ -16,7 +16,7 @@ else
 fi
 
 optional_alias cat bat
-optional_alias ls exa
+optional_alias ls eza
 
 alias ll='ls -lh'
 alias mkdir='mkdir -pv'
