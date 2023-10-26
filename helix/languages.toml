@@ -37,6 +37,11 @@ language-servers = ["eslint", "svelteserver", "emmet-language-server"]
 formatter = { command = 'prettier' }
 auto-format = true
 
+[[language]]
+name = "python"
+formatter = { command = 'black', args = ['--quiet', '-', '--line-length=79'] }
+auto-format = true
+
 
 # Language servers
 
