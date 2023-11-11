@@ -30,7 +30,7 @@ source_if_exists "$HOME/.config/zsh/starship.zsh"
 source_if_exists "$HOME/.config/zsh/cargo.zsh"
 source_if_exists "$HOME/.config/zsh/keybindings.zsh"
 source_if_exists "$HOME/.config/zsh/aliases.zsh"
-source_if_exists "$HOME/.config/zsh/lf.zsh"
+source_if_exists "$HOME/.config/zsh/yazi.zsh"
 source_if_exists "$HOME/.config/zsh/pnpm.zsh"
 source_if_exists "$HOME/.config/zsh/templates.zsh"
 
@@ -42,3 +42,11 @@ source_if_exists "$HOME/.config/zsh/templates.zsh"
 [[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && \
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 
+
+# bun completions
+[ -s "/Users/lollo/.bun/_bun" ] && source "/Users/lollo/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
