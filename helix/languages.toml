@@ -42,8 +42,18 @@ name = "python"
 formatter = { command = 'black', args = ['--quiet', '-', '--line-length=79'] }
 auto-format = true
 
+[[language]]
+name = "markdown"
+language-servers = ["marksman", "mdpls"]
+soft-wrap.enable = true
 
 # Language servers
+
+[language-server.mdpls]
+command = "mdpls"
+
+[language-server.mdpls.config]
+markdown.preview.auto = false
 
 [language-server.eslint]
 command = "vscode-eslint-language-server"
