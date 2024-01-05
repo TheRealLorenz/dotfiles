@@ -1,0 +1,8 @@
+build:
+	gcc *.c -o output
+
+run *ARGS: build
+	./output {{ARGS}}
+
+clean:
+	rm -f output
