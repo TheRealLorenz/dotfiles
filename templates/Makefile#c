@@ -1,0 +1,69 @@
+CC := clang
+
+##
+# Project vars
+#
+SRC_FOLDER := .
+TARGET_NAME := output
+CFLAGS := -Wall
+
+SOURCES := $(wildcard $(SRC_FOLDER)/*.c)
+OBJECTS := $(SOURCES:.c=.o)
+DEPENDENCIES := $(SOURCES:.c=.d)
+
+##
+# Debug vars
+#
+DEBUG_FLAGS := -g -O0
+DEBUG_FOLDER := build/debug
+
+##
+# Release vars
+#
+RELEASE_FLAGS := -O3
+RELEASE_FOLDER := build/release
+
+.PHONY: clean run help debug release default
+
+default: release
+
+## 
+# Debug subcommands
+#
+debug: CFLAGS += DEBUG_FLAGS
+debug: $(DEBUG_FOLDER)/$(TARGET_NAME)
+
+$(DEBUG_FOLDER)/$(TARGET_NAME): $(addprefix $(DEBUG_FOLDER)/,$(OBJECTS))
+	@mkdir -p $(@D)
+	$(CC) $(DEBUG_FLAGS) $^ -o $@
+
+-include $(addprefix $(DEBUG_FOLDER)/,$(DEPENDENCIES))
+
+$(DEBUG_FOLDER)/%.o: $(SRC_FOLDER)/%.c
+	@mkdir -p $(@D)
+	$(CC) $(DEBUG_FLAGS) -MMD -c $< -o $@
+
+##
+# Release subcommands
+#
+release: CFLAGS += RELEASE_FLAGS
+release: $(RELEASE_FOLDER)/$(TARGET_NAME)
+
+$(RELEASE_FOLDER)/$(TARGET_NAME): $(addprefix $(RELEASE_FOLDER)/,$(OBJECTS))
+	@mkdir -p $(@D)
+	$(CC) $(RELEASE_FLAGS) $^ -o $@
+
+-include $(addprefix $(RELEASE_FOLDER)/,$(DEPENDENCIES))
+
+$(RELEASE_FOLDER)/%.o: $(SRC_FOLDER)/%.c
+	@mkdir -p $(@D)
+	$(CC) $(RELEASE_FLAGS) -MMD -c $< -o $@
+
+##
+# Other subcommands
+#
+clean:
+	$(RM) -r build/
+
+help:
+	@echo "Available subcommands: clean, debug, release, run"
