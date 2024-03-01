@@ -1,6 +1,14 @@
 # Languages
 
 [[language]]
+name = "c"
+formatter = { command = "clang-format" }
+
+[[language]]
+name = "cpp"
+formatter = { command = "clang-format" }
+
+[[language]]
 name = "html"
 language-servers = ["vscode-html-language-server", "emmet-language-server"]
 formatter = { command = 'prettier', args = ["--parser", "html"] }
