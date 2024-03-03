@@ -12,6 +12,14 @@ OBJECTS := $(SOURCES:.c=.o)
 DEPENDENCIES := $(SOURCES:.c=.d)
 
 ##
+# Colored output
+#
+ifeq ($(origin NO_COLOR), environment)
+  COLOR_FLAGS :=
+endif
+COLOR_FLAGS ?= -fdiagnostics-color=always
+
+##
 # Debug vars
 #
 DEBUG_FLAGS := -g -O0
@@ -25,45 +33,52 @@ RELEASE_FOLDER := build/release
 
 .PHONY: clean run help debug release default
 
-default: release
+default: debug
 
 ## 
 # Debug subcommands
 #
-debug: CFLAGS += DEBUG_FLAGS
+debug: CFLAGS += $(DEBUG_FLAGS)
 debug: $(DEBUG_FOLDER)/$(TARGET_NAME)
 
 $(DEBUG_FOLDER)/$(TARGET_NAME): $(addprefix $(DEBUG_FOLDER)/,$(OBJECTS))
 	@mkdir -p $(@D)
-	$(CC) $(DEBUG_FLAGS) $^ -o $@
+	@echo "Compiling executable $@ (DEBUG) with '$(CC) $(CFLAGS)'"
+	@$(CC) $(CFLAGS) $(COLOR_FLAGS) $^ -o $@
 
 -include $(addprefix $(DEBUG_FOLDER)/,$(DEPENDENCIES))
 
 $(DEBUG_FOLDER)/%.o: $(SRC_FOLDER)/%.c
 	@mkdir -p $(@D)
-	$(CC) $(DEBUG_FLAGS) -MMD -c $< -o $@
+	@echo "- $< with '$(CC) $(CFLAGS)'"
+	@$(CC) $(CFLAGS) $(COLOR_FLAGS) -MMD -c $< -o $@ 2>&1 | sed 's/^/  /'
 
 ##
 # Release subcommands
 #
-release: CFLAGS += RELEASE_FLAGS
+release: CFLAGS += $(RELEASE_FLAGS)
 release: $(RELEASE_FOLDER)/$(TARGET_NAME)
 
 $(RELEASE_FOLDER)/$(TARGET_NAME): $(addprefix $(RELEASE_FOLDER)/,$(OBJECTS))
 	@mkdir -p $(@D)
-	$(CC) $(RELEASE_FLAGS) $^ -o $@
+	@echo "Compiling executable $@ (RELEASE) with '$(CC) $(CFLAGS)'"
+	@$(CC) $(CFLAGS) $(COLOR_FLAGS) $^ -o $@
 
 -include $(addprefix $(RELEASE_FOLDER)/,$(DEPENDENCIES))
 
 $(RELEASE_FOLDER)/%.o: $(SRC_FOLDER)/%.c
 	@mkdir -p $(@D)
-	$(CC) $(RELEASE_FLAGS) -MMD -c $< -o $@
+	@echo "- $< with '$(CC) $(CFLAGS)'"
+	$(CC) $(CFLAGS) $(COLOR_FLAGS) -MMD -c $< -o $@ 2>&1 | sed 's/^/  /'
 
 ##
 # Other subcommands
 #
 clean:
 	$(RM) -r build/
+
+run: debug
+	./$(DEBUG_FOLDER)/$(TARGET_NAME)
 
 help:
 	@echo "Available subcommands: clean, debug, release, run"
