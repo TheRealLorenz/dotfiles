@@ -3,7 +3,7 @@ names = []
 to = '~/.config'
 
 [[macOS]]
-names = [ 'zsh', 'starship.toml', 'alacritty.toml', 'helix', 'templates' ]
+names = [ 'zsh', 'starship.toml', 'alacritty', 'helix', 'templates' ]
 to = '~/.config'
 
 [[macOS]]
