@@ -16,3 +16,6 @@ name = 'tmux.conf'
 to = '~/'
 rename = '.tmux.conf'
 
+[[macOS]]
+name = 'scripts'
+to = '~/.local'

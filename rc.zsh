@@ -18,7 +18,7 @@ zmodload zsh/complist
 _comp_options+=(globdots)
 
 # Export PATH environmental variable
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.local/scripts"
 
 function source_if_exists() {
   [[ -f $1 ]] && source $1
@@ -33,7 +33,6 @@ source_if_exists "$HOME/.config/zsh/aliases.zsh"
 source_if_exists "$HOME/.config/zsh/yazi.zsh"
 source_if_exists "$HOME/.config/zsh/pnpm.zsh"
 source_if_exists "$HOME/.config/zsh/templates.zsh"
-source_if_exists "$HOME/.config/zsh/cmaker.zsh"
 
 # Set syntax highlighting
 [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \

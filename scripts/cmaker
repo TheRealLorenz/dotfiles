@@ -1,3 +1,4 @@
+#!/bin/bash
 
 RESET='\x1b[0m'
 RED='\x1b[31m'
@@ -91,3 +92,4 @@ run_task() {
   return $EXIT_CODE
 }
 
+cmaker $@
