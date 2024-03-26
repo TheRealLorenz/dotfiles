@@ -33,6 +33,7 @@ source_if_exists "$HOME/.config/zsh/aliases.zsh"
 source_if_exists "$HOME/.config/zsh/yazi.zsh"
 source_if_exists "$HOME/.config/zsh/pnpm.zsh"
 source_if_exists "$HOME/.config/zsh/templates.zsh"
+source_if_exists "$HOME/.config/zsh/cmaker.zsh"
 
 # Set syntax highlighting
 [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
