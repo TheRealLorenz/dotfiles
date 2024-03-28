@@ -48,6 +48,8 @@ alias s="source ~/.zshrc"
 # Git aliases
 
 alias gst="git status -s"
+
+# Git log
 glog() {
   git log --graph --oneline --color=always \
     | fzf --ansi --reverse \
@@ -57,6 +59,8 @@ glog() {
         --bind=alt-j:preview-down,alt-k:preview-up \
     | grep -o '[a-f0-9]\{7\}'
 }
+
+# Git diff
 gdiff() {
   git status --porcelain \
       | grep 'M' \
@@ -64,9 +68,13 @@ gdiff() {
       | gum filter \
       | xargs git diff $@
 }
+
+# Git branch new
 gbn() {
   gum input --prompt 'New branch name' | xargs git checkout -b
 }
+
+# Git branch delete
 gbd() {
   other_branches=$(git branch | grep -v "^\*")
 
@@ -78,6 +86,8 @@ gbd() {
       | gum choose --no-limit \
       | xargs git branch -d
 }
+
+# Git branch checkout
 gbc() {
   other_branches=$(git branch | grep -v "^\*")
 
