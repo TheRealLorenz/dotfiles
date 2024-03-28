@@ -42,41 +42,8 @@ alias ssh="TERM=xterm-256color ssh"
 alias bar="watch progress -w"
 alias rm="printf 'vuoi sfondare tutto di nuovo?\n'"
 alias cdtemp='cd $(mktemp -d)'
+alias gst="git status -s"
 alias lg="lazygit"
 
 alias s="source ~/.zshrc"
 
-### Git
-
-# Git commit
-alias gcm="git commit"
-alias gcma="git commit --amend"
-function gcmf() {
-    SUMMARY=$(gum input --placeholder "Summary of this change")
-    DESCRIPTION=$(gum write --placeholder "Details of this change (CTRL+D to finish)")
-
-    gum confirm "Commit changes?" \
-        && git commit -m "$SUMMARY" -m "$DESCRIPTION" \
-        || echo "Aborted"
-}
-
-# Git log
-alias glo="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias glop="git log --oneline --color=always | fzf --ansi --preview 'git show {+1} --color=always' | cut -d ' ' -f1 | copy"
-
-# Git status
-alias gst="git status"
-
-# Git branch
-function gbd() {
-  other_branches=$(git branch | grep -v "^\*")
-
-  [[ -z $other_branches ]] && echo "no branch to delete" && return 1;
-  echo $other_branches | gum choose --no-limit | xargs git branch -d
-}
-
-function gbc() {
-  other_branches=$(git branch | grep -v "^\*")
-  [[ -z $other_branches ]] && echo "no branch to checkout" && return 1;
-  echo $other_branches | gum choose | xargs git checkout
-}
