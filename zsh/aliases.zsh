@@ -99,3 +99,11 @@ gbc() {
       | gum choose \
       | xargs git checkout
 }
+
+# Git add
+gadd() {
+  git status --porcelain \
+      | cut -c 4- \
+      | gum choose --no-limit \
+      | xargs git add $@
+}
