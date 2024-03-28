@@ -65,7 +65,7 @@ gdiff() {
   git status --porcelain \
       | grep 'M' \
       | cut -c 4- \
-      | gum filter \
+      | gum choose \
       | xargs git diff $@
 }
 
