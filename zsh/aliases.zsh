@@ -42,8 +42,43 @@ alias ssh="TERM=xterm-256color ssh"
 alias bar="watch progress -w"
 alias rm="printf 'vuoi sfondare tutto di nuovo?\n'"
 alias cdtemp='cd $(mktemp -d)'
-alias gst="git status -s"
 alias lg="lazygit"
-
 alias s="source ~/.zshrc"
 
+# Git aliases
+
+alias gst="git status -s"
+glog() {
+  git log --graph --oneline --color=always \
+    | fzf --ansi --reverse \
+        --preview "echo {} \
+                  | grep -o '[a-f0-9]\{7\}' \
+                  | xargs git show --color=always" \
+        --bind=alt-j:preview-down,alt-k:preview-up \
+    | grep -o '[a-f0-9]\{7\}'
+}
+gbn() {
+  gum input --prompt 'New branch name' | xargs git checkout -b
+}
+gbd() {
+  other_branches=$(git branch | grep -v "^\*")
+
+  [[ -z $other_branches ]] \
+      && echo "No branch to delete" \
+      && return 1
+
+  echo $other_branches \
+      | gum choose --no-limit \
+      | xargs git branch -d
+}
+gbc() {
+  other_branches=$(git branch | grep -v "^\*")
+
+  [[ -z $other_branches ]] \
+      && echo "No branch to checkout" \
+      && return 1
+
+  echo $other_branches \
+      | gum choose \
+      | xargs git checkout
+}
