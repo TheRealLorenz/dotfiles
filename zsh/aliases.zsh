@@ -57,6 +57,13 @@ glog() {
         --bind=alt-j:preview-down,alt-k:preview-up \
     | grep -o '[a-f0-9]\{7\}'
 }
+gdiff() {
+  git status --porcelain \
+      | grep 'M' \
+      | cut -c 4- \
+      | gum filter \
+      | xargs git diff $@
+}
 gbn() {
   gum input --prompt 'New branch name' | xargs git checkout -b
 }
