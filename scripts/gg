@@ -1,0 +1,106 @@
+#!/bin/bash
+
+commit() {
+  gum confirm "Amend last commit?" \
+      && AMEND='--amend' \
+      || AMEND=''
+
+  SUMMARY=$(gum input \
+      --placeholder "Summary of this change" \
+      --width=50)
+  DESCRIPTION=$(gum write \
+      --placeholder "Details of this change (CTRL+D to finish)" \
+      --width=72)
+
+  if [[ -z $SUMMARY ]] && [[ -z $DESCRIPTION ]]; then
+    git commit ${AMEND}
+    return 0
+  fi
+
+  gum confirm "Commit changes?" \
+      && git commit ${AMEND} -m "$SUMMARY" -m "$DESCRIPTION" \
+      || echo "Aborted"
+}
+
+branch_add() {
+  NAME=$(gum input --placeholder "New branch name")
+
+  git checkout -b ${NAME}
+}
+
+branch_delete() {
+  other_branches=$(git branch | grep -v "^\*")
+
+  [[ -z $other_branches ]] \
+      && echo "No branch to delete" \
+      && return 1
+
+  echo $other_branches \
+      | gum choose --no-limit \
+      | xargs git branch -d
+}
+
+branch_checkout() {
+  other_branches=$(git branch | grep -v "^\*")
+
+  [[ -z $other_branches ]] \
+      && echo "No branch to checkout" \
+      && return 1
+
+  echo $other_branches \
+      | gum choose \
+      | xargs git checkout
+}
+
+branch() {
+  OPTIONS=('add', 'delete', 'checkout')
+  SELECTED=$(gum filter --reverse ${OPTIONS[@]})
+
+  if [[ -z $SELECTED ]]; then
+    echo "No option specified"
+    return 1
+  fi
+
+  if [[ $SELECTED == 'add' ]]; then
+    branch_add
+  elif [[ $SELECTED == 'delete' ]]; then
+    branch_delete
+  elif [[ $SELECTED == 'checkout' ]]; then
+    branch_checkout
+  else
+    echo "Invalid option '${SELECTED}'"
+    return 1
+  fi
+}
+
+log() {
+  git log --graph --oneline --color=always \
+      | fzf --ansi --reverse \
+          --preview "echo {} | grep -o '[a-f0-9]\{7\}' | xargs git show --color=always" \
+          --bind=alt-j:preview-down,alt-k:preview-up \
+      | grep -o '[a-f0-9]\{7\}'
+}
+
+OPTIONS=('commit' 'log' 'branch')
+
+main() {
+  SELECTED=$(gum filter --reverse ${OPTIONS[@]})
+
+  if [[ -z $SELECTED ]]; then
+    echo "No option specified"
+    return 1
+  fi
+
+  if [[ $SELECTED == 'commit' ]]; then
+    commit
+  elif [[ $SELECTED == 'log' ]]; then
+    log
+  elif [[ $SELECTED == 'branch' ]]; then
+    branch
+  else
+    echo "Invalid option '${SELECTED}'"
+    return 1
+  fi
+}
+
+main $@
