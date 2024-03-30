@@ -21,7 +21,6 @@ optional_alias ls eza
 alias ll='ls -lh'
 alias mkdir='mkdir -pv'
 alias pong='ping google.com'
-alias ~='cd ~'
 alias cd..='cd ..'
 alias ..='cd ..'
 alias ...='cd ../../'
