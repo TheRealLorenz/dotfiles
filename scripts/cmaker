@@ -30,7 +30,7 @@ run_task() {
       || echo "${RED}${BOLD}✘${RESET} ${TITLE}"
 
   [[ $EXIT_CODE -ne 0 ]] || [[ ! -z $VERBOSE ]] \
-      && echo $OUTPUT | sed 's/^/  /g'
+      && echo "${OUTPUT}" | sed 's/^/  /g'
 
   return $EXIT_CODE
 }
