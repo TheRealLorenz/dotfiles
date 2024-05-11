@@ -1,2 +1,2 @@
-export EDITOR="hx"
+export EDITOR="nvim"
 
