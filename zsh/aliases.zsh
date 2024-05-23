@@ -70,7 +70,7 @@ gdiff() {
 
 # Git branch new
 gbn() {
-  gum input --prompt 'New branch name' | xargs git checkout -b
+  gum input --prompt 'New branch name: ' | xargs git checkout -b
 }
 
 # Git branch delete
