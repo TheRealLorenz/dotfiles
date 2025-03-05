@@ -19,3 +19,8 @@ rename = '.tmux.conf'
 [[macOS]]
 name = 'scripts'
 to = '~/.local'
+
+[[macOS]]
+name = 'plot.gnu'
+to = '~/'
+rename = ".gnuplot"
