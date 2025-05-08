@@ -1,4 +1,4 @@
 theme = catppuccin-mocha
 macos-option-as-alt = left
-font-family = Hurmit Nerd Font Mono
-font-thicken = true
+font-family = Liga SFMono Nerd Font
+# font-thicken = true
